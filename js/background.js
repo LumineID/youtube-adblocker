@@ -5,9 +5,6 @@
     // Cek update
     const checkUpdate = true;
 
-    // Hapus Statis ADS
-    const removeStaticAds = true;
-
     const defaultSettings = {
         AD_SKIPPER: true,
         AD_STATIC: true,
