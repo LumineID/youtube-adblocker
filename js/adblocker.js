@@ -35,7 +35,6 @@
         }
     }, 200);
 
-
     removeAds();
     setTimeout(() => {
         if (window.__OBSERVER) {

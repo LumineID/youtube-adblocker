@@ -1,0 +1,364 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: "Edu NSW ACT Foundation", cursive !important;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    display: absolute;
+    top: 50%;
+    transform: translateY(-50%, -50%);
+    background-color: #32a89e;
+    font-size: 15px;
+}
+
+.main {
+    display: block;
+    width: 320px;
+    padding-bottom: 1rem;
+    border: 4px solid #32a89e;
+    background-color: #fff;
+}
+
+.header {
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+    padding: 1rem;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-bottom: 4px solid #32a89e;
+    margin-bottom: .5rem;
+}
+
+.pointer {
+    cursor: pointer !important;
+}
+
+.text {
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.primary {
+    color: #32a89e !important; 
+}
+
+.text-sm {
+    font-size: 18px;
+}
+
+.text-md {
+    font-size: 28px;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.ms-1 {
+    margin-left: 1rem;
+}
+
+hr {
+    border-color: #32a89e;
+    margin-bottom: 1rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+a {
+    text-decoration: none;
+    color: #32a89e;
+}
+
+.ad-count {
+    font-size: 50px;
+    font-family: "Rubik Scribble", system-ui;
+    font-weight: 900;
+    font-style: normal;
+    color: #32a89e;
+    text-shadow: 3px 3px 5px;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-all;
+    cursor: pointer;
+    transition: transform .3s;
+    margin-bottom: 0.5rem;
+}
+
+.ad-count:hover {
+    transform: scale(1.2);
+}
+
+.ad-update {
+    animation: blink-animation 1.5s steps(5, start) infinite;
+}
+
+.ad-update:hover,
+.ad-update:active {
+    animation: none;
+}
+
+.actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.actions a {
+    padding: .5rem .8rem;
+    cursor: pointer;
+    background-color: transparent;
+    text-transform: uppercase;
+    outline: 0;
+    transition: background-color .4s, color .4s, transform .1s;
+    color: #32a89e;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.actions a:hover {
+    color: white;
+    box-shadow: 0 0 24px rgba(black, .2);
+    background-color: #32a89e;
+}
+
+.actions a:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 16px rgba(black, .3);
+}
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+.body {
+    position: relative;
+}
+
+.button-setting {
+    position: absolute;
+    z-index: 10;
+    background-color: #32a89e;
+    padding: .2rem;
+    width: 30px;
+    height: 40px;
+    cursor: pointer;
+    top: 12px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 0px 0px 10px 10px;
+    font-size: 20px;
+}
+
+section {
+    padding-top: 50px;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.flex {
+    display: flex !important;
+}
+
+.block {
+    display: block !important;
+}
+
+.justify-center {
+    justify-content: center !important;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+.center {
+    text-align: center;
+    display: block;
+}
+
+.color-danger {
+    color: rgba(222, 17, 17, 0.942)
+}
+
+.form {
+    margin-bottom: 0.75rem;
+}
+
+.form.inline {
+    display: flex;
+}
+
+.form.inline .label {
+    display: flex;
+    align-items: center;
+    padding: .2rem;
+    font-size: 17px;
+}
+
+.form input {
+    height: 40 px;
+    outline: none;
+    background-color: transparent;
+    padding: .3rem;
+    border: 4px solid #32a89e;
+    width: 100%;
+    color: #ffffffc3;
+    font-family: "Edu NSW ACT Foundation", cursive !important;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.form .label {
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.form .form-checkbox {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+.form .form-checkbox input[type=checkbox] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+.form .form-checkbox input[type=checkbox]:checked~.mark {
+    color: #32a89e;
+}
+
+.form .form-checkbox input[type=checkbox]:checked~.mark:before {
+    left: 23px;
+    background-color: #32a89e;
+}
+
+.form .form-checkbox .mark {
+    display: inline-block;
+    position: relative;
+    border-radius: 2px;
+    border: 4px solid #32a89e;
+    width: 50px;
+    height: 30px;
+    padding: 2px;
+}
+
+.form .form-checkbox .mark:before,
+.form .form-checkbox .mark:after {
+    content: "";
+    position: absolute;
+    transition: all 0.5s ease;
+}
+
+.form .form-checkbox .mark:before {
+    top: 3.5px;
+    left: 4px;
+    width: 15px;
+    height: 15px;
+    background: #f0f0f0c4;
+    border-radius: 2px;
+}
+
+button {
+    padding: 0.35rem;
+    border-radius: 2px;
+    color: #fff;
+    background-color: #32a89e;
+    border: none;
+    cursor: pointer;
+    font-family: "Edu NSW ACT Foundation", cursive;
+    letter-spacing: 1px;
+    font-size: 15px;
+    text-align: center;
+}
+
+button:hover,
+button:active {
+    background-color: #1e948a;
+}
+
+button:disabled,
+button.disabled {
+    background-color: #b5d9d6e6;
+    cursor: not-allowed;
+    color: #ffffffa1;
+}
+
+.info {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.info .info-item {
+    border-top: 1px solid #32a89e;
+    margin-bottom: 0.50rem;
+    padding: 0.25rem 0rem 0.25rem 0px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.info .info-item:last-child {
+    border-bottom: 1px solid #32a89e;
+    padding-bottom: 0.75rem;
+}
+.info .info-item h4 {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.info .info-item div:nth-child(2) {
+    font-size: 17px;
+    padding: 0.50rem 0px 0.50rem 0px;
+}
+
+.info .info-item i {
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+.info .info-item i:active {
+    transform: scale(1.3);
+    color: #32a89e;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #ffffffce;
+    }
+
+    .main {
+        background-color: #000;
+    }
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}

@@ -15,13 +15,23 @@
     "permissions": [
         "scripting",
         "tabs",
-        "storage"
+        "storage",
+        "declarativeNetRequest"
     ],
     "host_permissions": [
         "https://*/*"
     ],
     "background": {
         "service_worker": "js/background.js"
+    },
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+                "id": "modifyHeaders",
+                "enabled": true,
+                "path": "rules.json"
+            }
+        ]
     },
     "content_scripts": [
         {

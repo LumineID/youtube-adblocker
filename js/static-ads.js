@@ -34,7 +34,7 @@
     const el = document.createElement("style");
     el.setAttribute("data-id", "static-ads-remover");
     el.textContent = `${staticAds.join(', ')} { display: none !important; visibility: hidden !important }`;
-    
+
     document.head.appendChild(el);
 
     browser.runtime.sendMessage({action: "log", message: "Penghapus statis ADS ditambahkan."})

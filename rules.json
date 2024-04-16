@@ -1,0 +1,85 @@
+[
+    {
+        "id": 1,
+        "priority": 1,
+        "action": {
+            "type": "modifyHeaders",
+            "requestHeaders": [
+                {
+                    "header": "Sec-Fetch-Site",
+                    "value": "same-origin",
+                    "operation": "set"
+                },
+                {
+                    "header": "Sec-Fetch-Mode",
+                    "value": "navigate",
+                    "operation": "set"
+                },
+                {
+                    "header": "Sec-Fetch-Dest",
+                    "value": "document",
+                    "operation": "set"
+                },
+                {
+                    "header": "Sec-Ch-Ua-Arch",
+                    "value": "",
+                    "operation": "set"
+                },
+                {
+                    "header": "Sec-Ch-Ua-Bitness",
+                    "value": "64",
+                    "operation": "set"
+                },
+                {
+                    "header": "Sec-Ch-Ua-Mobile",
+                    "value": "?0",
+                    "operation": "set"
+                },
+                {
+                    "header": "Sec-Ch-Ua-Platform",
+                    "value": "Windows",
+                    "operation": "set"
+                },
+                {
+                    "header": "Sec-Ch-Ua-Platform-Version",
+                    "value": "10.0",
+                    "operation": "set"
+                },
+                {
+                    "header": "Sec-Ch-Ua-Model",
+                    "value": "",
+                    "operation": "set"
+                },
+                {
+                    "header": "Sec-Ch-Ua-Wow64",
+                    "value": "?0",
+                    "operation": "set"
+                },
+                {
+                    "header": "Sec-Ch-Ua-Version",
+                    "value": "123.0.0.0",
+                    "operation": "set"
+                },
+                {
+                    "header": "Sec-Ch-Ua-Full-Version-List",
+                    "value": "\"Google Chrome\";v=\"123.0.0.0\", \"Not:A-Brand\";v=\"8.0.0.0\", \"Chromium\";v=\"123.0.0.0\"",
+                    "operation": "set"
+                },
+                {
+                    "header": "Sec-Ch-Ua",
+                    "value": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+                    "operation": "set"
+                },
+                {
+                    "header": "User-Agent",
+                    "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+                    "operation": "set"
+                }
+            ]
+        },
+        "condition": {
+            "regexFilter": "^https://www\\.youtube\\.com/watch\\?v=.*#VIDEO_DATA$",
+            "resourceTypes": ["xmlhttprequest"]
+        }
+    }
+]   
