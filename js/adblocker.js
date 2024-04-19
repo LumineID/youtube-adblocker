@@ -3,6 +3,16 @@
         var browser = typeof chrome !== "undefined" ? chrome : null;
     }
 
+    const adSelector = [
+        ".video-ads:has(.ytp-ad-player-overlay)",
+        ".video-ads:has(.ytp-ad-player-overlay-layout)"
+    ];
+
+    const skipButtonSelector = [
+        ".ytp-skip-ad-button",
+        ".ytp-ad-skip-button-modern"
+    ];
+
     browser.runtime.sendMessage({action: "log", message: `Adblocker sedang berjalan dilatar belakang 🏃‍♂️`});
 
     function debounce(func, timeout) {
@@ -14,23 +24,23 @@
     }
 
     const removeAds = debounce(function() {
-        const videoAds = document.querySelector(".video-ads:has(.ytp-ad-player-overlay)");
-        const skipLock = document.querySelector(".ytp-ad-preview-text-modern")?.innerText?.trim();
+        const ads = adSelector.map(selector => document.querySelector(selector))
+            .filter(el => el instanceof HTMLElement);
 
-        if (videoAds && skipLock) {
+        const hasVideoAds = ads.length > 0;
+        const hasSkipLock = document.querySelector(":has(.ytp-preview-ad") instanceof HTMLElement;
+
+        if (hasVideoAds && hasSkipLock) {
             const videoPlayer = document.getElementsByClassName("video-stream")[0];
             // videoPlayer.muted = true;
             videoPlayer.currentTime = videoPlayer.duration - 0.1;
             videoPlayer.paused && videoPlayer.play();
         }
 
-        if (videoAds) {
-            document.querySelector(".ytp-ad-skip-button")?.click();
-            document.querySelector(".ytp-ad-skip-button-modern")?.click();
-
+        if (hasVideoAds) {
+            skipButtonSelector.forEach(selector => document.querySelector(selector)?.click());
             const count = Number(document.documentElement.getAttribute("ad-skip-count") || 0) + 1;
             document.documentElement.setAttribute("ad-skip-count", String(count));
-            
             browser.runtime.sendMessage({action: "log", message: `ADS dilewati (${count}) ✔️`})
         }
     }, 200);
