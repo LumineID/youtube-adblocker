@@ -8,6 +8,11 @@
         ".video-ads:has(.ytp-ad-player-overlay-layout)"
     ];
 
+    const skipLockSelector = [
+        ".video-ads:has(.ytp-preview-ad)",
+        ".video-ads:has(.ytp-ad-player-overlay-skip-or-preview)"
+    ]
+
     const skipButtonSelector = [
         ".ytp-skip-ad-button",
         ".ytp-ad-skip-button-modern"
@@ -26,13 +31,16 @@
     const removeAds = debounce(function() {
         const ads = adSelector.map(selector => document.querySelector(selector))
             .filter(el => el instanceof HTMLElement);
+        const skipLock = skipLockSelector.map(selector => document.querySelector(selector))
+            .filter(el => el instanceof HTMLElement);
 
         const hasVideoAds = ads.length > 0;
-        const hasSkipLock = document.querySelector(":has(.ytp-preview-ad") instanceof HTMLElement;
+        const hasSkipLock = skipLock.length > 0;
 
-        if (hasVideoAds && hasSkipLock) {
-            const videoPlayer = document.getElementsByClassName("video-stream")[0];
-            // videoPlayer.muted = true;
+        let videoPlayer = null;
+
+        if (hasVideoAds && hasSkipLock && (videoPlayer = document.querySelector("video.video-stream[src]"))) {
+            videoPlayer.muted = true;
             videoPlayer.currentTime = videoPlayer.duration - 0.1;
             videoPlayer.paused && videoPlayer.play();
         }
