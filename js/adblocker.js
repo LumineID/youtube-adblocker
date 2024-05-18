@@ -53,7 +53,7 @@
         }
     }, 200);
 
-    removeAds();
+    setTimeout(removeAds, 500);
     setTimeout(() => {
         if (window.__OBSERVER) {
             // DISCONNECT PREVIOUS OBSERVER
@@ -79,5 +79,5 @@
             attributes: true,
             subtree: true   
         });
-    }, 1000)
+    }, 2000)
 })();
