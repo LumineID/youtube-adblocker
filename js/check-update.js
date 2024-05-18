@@ -3,7 +3,7 @@
     const manifestUrl = "https://raw.githubusercontent.com/LumineID/youtube-adblocker/master/manifest.json";
 
     // Versi AdBlocker
-    const version = 1.3;
+    const version = 1.4;
 
     try {
         let response = await fetch(manifestUrl);
